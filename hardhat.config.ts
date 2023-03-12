@@ -44,7 +44,7 @@ const config: HardhatUserConfig = {
       chainId: 80001,
       allowUnlimitedContractSize: true,
       gasPrice: 75000000000,
-      gas: 6000000,
+      gas: 20000000,
     },
     goerli: {
       url: goerliUrl,
@@ -52,7 +52,7 @@ const config: HardhatUserConfig = {
       chainId: 5,
       allowUnlimitedContractSize: true,
       gasPrice: 75000000000,
-      gas: 6000000,
+      gas: 10000000,
     },
   },
   solidity: {

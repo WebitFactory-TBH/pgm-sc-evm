@@ -8,7 +8,7 @@ async function main() {
   }
 
   const Contract = await ethers.getContractFactory("Pagamentio");
-  console.log("Upgrading contract contract...");
+  console.log("Upgrading contract...");
 
   const res = await upgrades.upgradeProxy(proxy, Contract);
   console.log(`Contract contract upgraded: ${res.address}`);

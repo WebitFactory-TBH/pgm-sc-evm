@@ -116,7 +116,9 @@ contract Pagamentio is
         emit PaymentCreated(msg.sender, payment, identifier);
     }
 
-    function cancelPayment(string memory identifier)
+    function cancelPayment(
+        string memory identifier
+    )
         public
         whenNotPaused
         paymentExists(identifier)
@@ -129,7 +131,9 @@ contract Pagamentio is
         emit PaymentCancelled(identifier);
     }
 
-    function completePayment(string memory identifier)
+    function completePayment(
+        string memory identifier
+    )
         public
         payable
         whenNotPaused
@@ -148,6 +152,12 @@ contract Pagamentio is
         payments[identifier].status = Status.Completed;
 
         emit PaymentCompleted(identifier);
+    }
+
+    function getRequiredAmount(
+        string memory identifier
+    ) public view returns (uint256) {
+        return payments[identifier].totalAmount;
     }
 
     function pause() public onlyOwner nonReentrant {
