@@ -7,7 +7,7 @@ async function main() {
     throw Error("Contract proxy address is not set");
   }
 
-  const Contract = await ethers.getContractFactory("Contract");
+  const Contract = await ethers.getContractFactory("Pagamentio");
   console.log("Upgrading contract contract...");
 
   const res = await upgrades.upgradeProxy(proxy, Contract);
